@@ -12,7 +12,7 @@ view all departments, view all roles, view all employees, add a department, add 
 
 A video demonstrating the functionality of this app can be found below:
 
-![walkthrough video for employee tracker app](./assets/Employee-Tracker.mp4)
+![walkthrough video for employee tracker app](https://drive.google.com/file/d/1ZbShT3DCb0Cxeqsck_CnNzoJlS_UcMYY/view)
 
 ## License
 Please refer to the LICENSE in the repo.
