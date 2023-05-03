@@ -148,7 +148,51 @@ const addRole = (askUser) => {
     });
 }
 
-// updateEmployeeRole
+// Update an employee's role
+const updateEmployeeRole = (askUser) => {
+    db.query('SELECT * FROM employee', function (err, employees) {
+      if (err) throw err;
+      db.query('SELECT * FROM role', function (err, roles) {
+        if (err) throw err;
+        inquirer
+          .prompt([
+            {
+              type: 'list',
+              name: 'employee_id',
+              message: "Which employee's role do you want to update?",
+              choices: employees.map((employee) => {
+                return {
+                  name: employee.first_name + ' ' + employee.last_name,
+                  value: employee.id,
+                };
+              }),
+            },
+            {
+              type: 'list',
+              name: 'role_id',
+              message: "What is the employee's new role?",
+              choices: roles.map((role) => {
+                return {
+                  name: role.title,
+                  value: role.id,
+                };
+              }),
+            },
+          ])
+          .then(function (answer) {
+            db.query(
+              `UPDATE employee SET role_id = '${answer.role_id}' WHERE id = '${answer.employee_id}'`,
+              function (err, res) {
+                if (err) throw err;
+                console.log('Employee role has been updated.');
+                askUser();
+              }
+            );
+          });
+      });
+    });
+  }
+  
 
 exports.viewAllEmployees = viewAllEmployees;
 exports.viewAllDepartments = viewAllDepartments;
@@ -156,3 +200,4 @@ exports.viewAllRoles = viewAllRoles;
 exports.addDepartment = addDepartment;
 exports.addEmployee = addEmployee;
 exports.addRole = addRole;
+exports.updateEmployeeRole = updateEmployeeRole;

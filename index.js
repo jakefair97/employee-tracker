@@ -52,7 +52,7 @@ const askUser = () => {
       modules.addRole(askUser);
       break;
     case 'Update an employee role':
-      updateEmployeeRole();
+      modules.updateEmployeeRole(askUser);
       break;
     default:
       console.log('Invalid choice');
