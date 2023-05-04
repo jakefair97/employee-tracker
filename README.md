@@ -10,9 +10,9 @@ This application requires the Inquirer package and mysql2 packageto be installed
 When the user starts the application they are prompted to select an action to perform on the database. These actions include:
 view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role. When the user selects a "view" option, that table is presented to the user. When they select an "add" option, they are prompted with the information to add to the selected table. When they select "update an employee" they are able to select an employee and update their role. 
 
-A video demonstrating the functionality of this app can be found below:
+A link to a video demonstrating the functionality of this app can be found below:
 
-![walkthrough video for employee tracker app](https://drive.google.com/file/d/1ZbShT3DCb0Cxeqsck_CnNzoJlS_UcMYY/view)
+https://drive.google.com/file/d/1ZbShT3DCb0Cxeqsck_CnNzoJlS_UcMYY/view
 
 ## License
 Please refer to the LICENSE in the repo.
